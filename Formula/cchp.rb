@@ -2,7 +2,6 @@
 class Cchp < Formula
   desc "Command-line tool for CCHP (Claude Code Hub Plus)"
   homepage "https://github.com/CCH-HQ/cchp-cli"
-  version "0.1.0"
   license "MIT"
 
   on_macos do
