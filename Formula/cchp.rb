@@ -6,23 +6,23 @@ class Cchp < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/CCH-HQ/cchp-cli/releases/download/v0.1.0/cchp_0.1.0_darwin_arm64.tar.gz"
-      sha256 "f745da5c34c48f16942375d9ec9ee789ff142822271a06cac3044cd59ce135cd"
+      url "https://github.com/CCH-HQ/cchp-cli/releases/download/v0.1.1/cchp_0.1.1_darwin_arm64.tar.gz"
+      sha256 "5fbb35583cabaf895b816d060ea4fc9497249e28c5af3724c6ab7ab3bc9f6d31"
     end
     on_intel do
-      url "https://github.com/CCH-HQ/cchp-cli/releases/download/v0.1.0/cchp_0.1.0_darwin_amd64.tar.gz"
-      sha256 "659ef903c07c9878e4350739ab12d0bfd5f5b84214ee2fe57d32968b14a34b5d"
+      url "https://github.com/CCH-HQ/cchp-cli/releases/download/v0.1.1/cchp_0.1.1_darwin_amd64.tar.gz"
+      sha256 "dcd843fd266d1f44129bf026bb25cb7e5c37df5f5d7b355eff73228aa0c6cc44"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/CCH-HQ/cchp-cli/releases/download/v0.1.0/cchp_0.1.0_linux_arm64.tar.gz"
-      sha256 "4720b6f6f68c8179e6a4d1527013d4f71107d60be584a9c17367c440a3e24537"
+      url "https://github.com/CCH-HQ/cchp-cli/releases/download/v0.1.1/cchp_0.1.1_linux_arm64.tar.gz"
+      sha256 "1de30728395d7af6f8a262c29d6a681a3888c2400c87f5be737a6f6a1227e340"
     end
     on_intel do
-      url "https://github.com/CCH-HQ/cchp-cli/releases/download/v0.1.0/cchp_0.1.0_linux_amd64.tar.gz"
-      sha256 "96e7fd2380577c67997040be6dd5134b56cd882bfda7c7fb40917995e3eaafe5"
+      url "https://github.com/CCH-HQ/cchp-cli/releases/download/v0.1.1/cchp_0.1.1_linux_amd64.tar.gz"
+      sha256 "c138039f5a0359507df769c6e7ca055c5dfd2742c4f9b04fcc510033b466c6ef"
     end
   end
 
