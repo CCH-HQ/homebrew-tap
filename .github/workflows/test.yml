@@ -1,0 +1,39 @@
+name: Test formulas
+
+on:
+  push:
+    branches: [main]
+    paths: ['Formula/**', '.github/workflows/test.yml']
+  pull_request:
+    paths: ['Formula/**', '.github/workflows/test.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: test-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Install and test (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-15, ubuntu-24.04]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: Homebrew/actions/setup-homebrew@bc9c5b2478f4c3e20de6a5d286d35d6cc16df46d
+      - name: Add local tap checkout
+        run: brew tap cch-hq/tap "$GITHUB_WORKSPACE"
+      - name: Install release and shell completions
+        run: brew install cch-hq/tap/cchp
+      - name: Test installed command
+        run: brew test cch-hq/tap/cchp
+      - name: Audit formula
+        run: brew audit --strict cch-hq/tap/cchp
